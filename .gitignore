@@ -1,0 +1,45 @@
+# ── Книги / защищённые авторским правом материалы ──
+/books/
+
+# ── Индексы и производные артефакты ──
+/.kb_index/
+
+# ── Виртуальное окружение ──
+/.mcp/.venv/
+/.venv/
+venv/
+env/
+
+# ── Локальные настройки Claude Code ──
+/.claude/
+
+# ── Секреты и переменные окружения ──
+.env
+.env.local
+*.secret
+
+# ── Python / IDE ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.ipynb_checkpoints/
+*.code-workspace
+.vscode/
+.idea/
+
+# ── Операционные системы ──
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Временные файлы ──
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
