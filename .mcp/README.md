@@ -11,7 +11,7 @@
 ## Установка зависимостей
 
 ```powershell
-cd 'D:\СС\IdeaProjects\knowledge_base\.mcp'
+cd .mcp
 py -m pip install -r requirements.txt
 ```
 
@@ -32,7 +32,7 @@ JSON-фрагмент:
     "knowledge_base": {
       "command": "py",
       "args": [
-        "D:/СС/IdeaProjects/knowledge_base/.mcp/server.py"
+        "<repo_root>/.mcp/server.py"
       ],
       "env": {
         "PYTHONIOENCODING": "utf-8"
@@ -75,7 +75,7 @@ knowledge_base/
 
 ```powershell
 $env:PYTHONIOENCODING = "utf-8"
-py D:/СС/IdeaProjects/knowledge_base/.mcp/server.py
+py .mcp/server.py
 ```
 
 (Ожидай пустого вывода — сервер ждёт JSON-RPC через stdin.)
