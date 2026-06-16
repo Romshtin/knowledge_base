@@ -31,9 +31,13 @@ CHUNK_SIZE = 1000
 OVERLAP = 200
 MODEL_NAME = "all-MiniLM-L6-v2"
 
+# === Оффлайн-режим (модель уже в кеше HuggingFace) ===
+os.environ.setdefault("HF_HUB_OFFLINE", "1")
+os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
+
 # === Модель ===
 logging.info("Загрузка модели эмбеддингов...")
-model = SentenceTransformer(MODEL_NAME, local_files_only=True)
+model = SentenceTransformer(MODEL_NAME)
 
 # === Работа с индексом ===
 def get_file_hash(path: Path) -> str:

@@ -17,6 +17,8 @@ py -m pip install -r requirements.txt
 
 Первая установка скачает PyTorch (~200–500 МБ) — это нормально.
 
+> **Модель эмбеддингов:** сервер работает в оффлайн-режиме (`HF_HUB_OFFLINE=1`). Модель `all-MiniLM-L6-v2` (~90 МБ) должна быть предварительно скачана в кеш HuggingFace (`%USERPROFILE%\.cache\huggingface\hub`). При первой настройке запусти `run_server.cmd` — он скачает модель автоматически, если интернет доступен, или использует уже загруженную.
+
 ## Подключение к Claude Code
 
 Добавь в конфигурацию MCP-серверов. Файл настроек Claude Code:
@@ -30,17 +32,16 @@ JSON-фрагмент:
 {
   "mcpServers": {
     "knowledge_base": {
-      "command": "py",
-      "args": [
-        "<repo_root>/.mcp/server.py"
-      ],
-      "env": {
-        "PYTHONIOENCODING": "utf-8"
-      }
+      "command": "D:\\CC\\IdeaProjects\\knowledge_base\\.mcp\\run_server.cmd",
+      "args": [],
+      "env": {},
+      "enabled": false
     }
   }
 }
 ```
+
+> `enabled: false` означает, что сервер по умолчанию выключен. Включай его вручную через `/mcp` в Claude Code, когда нужен доступ к базе знаний.
 
 > **Важно:** используй прямые слэши `/` в путях, даже на Windows — Claude Code парсит их корректно.
 
