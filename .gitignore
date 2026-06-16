@@ -13,6 +13,11 @@ env/
 # ── Локальные настройки Claude Code ──
 /.claude/
 
+# ── Проектная память и инструкции Claude Code ──
+/CLAUDE.md
+/MEMORY.md
+/memory/
+
 # ── Секреты и переменные окружения ──
 .env
 .env.local
